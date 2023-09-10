@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Attendance History</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance History</title>
+    <link rel="stylesheet" href="style3.css"></head>
+</head>
+<body>
+        <table id="dynamic-table">
+        <thead>
+            <tr>
+                <th>NAME</th>
+                <th>PHOTO</th>
+                <th>DATE</th>
+                <th>TIME</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+    </table>
+
+    <script>
+                            
+        async function fetchAndPopulateTable() {
+            const apiUrl = "http://shashbook:6969/attendance_list";
+            
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                console.log(data);
+
+                const tableBody = document.getElementById("table-body");
+                
+                // Loop through the data and create table rows
+                let bodyHtml="";
+                data.forEach((item) => {
+                    // name image date time
+                    bodyHtml+=`<tr><td>${item.name}</td><td><img src=http://shashbook:6969${item.image}></img></td><td>${item.date}</td><td>${item.time}</td></tr>`
+                });
+
+                tableBody.innerHTML=bodyHtml
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        }
+
+        // Call the function to fetch and populate the table
+        fetchAndPopulateTable();
+
+    </script>
+</body>
+</html>

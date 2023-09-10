@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance System</title>
+    <link rel="stylesheet" href="styles.css"></head>
+
+</head>
+<body>
+    
+ <!-- Header-->
+ <header class="header">
+
+    <div class="bx bx-menu" id="menu-icon"></div>
+    <nav class="navbar">
+      <a href="#home" class="active">Home</a>
+      <a href="index2.html" >New User Registration</a>
+      <a href="index3.html" >Attendance History</a>
+
+
+      <section class="home" id="home">
+        <div class="home-content">
+           
+            <div class="text-animate">
+                <h3>24-Hour Face Detection Attendance System Challenge!</h3>
+            </div>
+
+            <div>
+            <p id="para">
+                "Revolutionize Attendance Tracking with Face Recognition – Accurate, Secure, and Efficient."
+            </p>
+            </div>
+            
+            <div id="form3">
+                <form class="myForm3">
+                 <button class="btn-box" type="submit" target="_blank" ><b>Mark Your Attendance</b></button>
+                </form>
+                </div>
+
+        </div>
+    
+        
+        </section>
+      
+
+    <script src="your-script.js"></script>
+    <script>
+            const formEl = document.querySelector('.myForm3');
+    formEl.addEventListener('submit', event => {
+        event.preventDefault();
+
+        var newWindow = window.open('http://shashbook:6969/recognize_face');
+        newWindow.focus();
+            });
+    </script>
+    </nav>
+</header>
+
+</body>
+</html>

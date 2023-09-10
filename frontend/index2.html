@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles2.css"></head>
+
+<body>
+    
+  <!-- contact section design -->
+  <section class="contact" id="contact">
+    <h2 class="heading">Mark my <span>Attendance</span></h2>
+
+    
+    <form class="myForm">
+    <input class="namebtn" type="text" id= "Name" name="name" placeholder="name" required>
+    
+    <button class="btn-box" type="submit" target="_blank" >Submit</button>
+   </form>
+    
+
+   <div id="form2">
+   <form class="myForm2">
+    <button class="btn-box" type="submit" target="_blank" >Finalize</button>
+   </form>
+   </div>
+
+ </section>
+
+<script>
+    
+    const formEl = document.querySelector('.myForm');
+    formEl.addEventListener('submit', event => {
+        event.preventDefault();
+
+        const formData = new FormData(formEl);
+        const data = Object.fromEntries(formData);
+        var name = document.getElementById("Name").value;
+
+        var newWindow = window.open('http://shashbook:6969/generate_dataset/' + name);
+        newWindow.focus();
+        });
+    
+    </script>
+  
+  <script>
+    const formE2 = document.querySelector('.myForm2');
+    formE2.addEventListener('submit', event => {
+    event.preventDefault();
+
+    var newWindow = window.open('http://shashbook:6969/train_model/');
+    newWindow.focus();
+    });
+</script>
+
+</body>
+</html>
